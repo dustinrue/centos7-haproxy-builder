@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+   haproxy-builder:
+     build: ./dockerfiles
+     environment:
+       HAPROXY_VERSION: "1.6.11"
+     volumes:
+       - ./output:/output
