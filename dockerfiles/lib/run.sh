@@ -1,6 +1,7 @@
 #!/bin/bash
 rpm -i http://vault.centos.org/7.3.1611/os/Source/SPackages/haproxy-1.5.18-3.el7.src.rpm
 cd /root/rpmbuild/SPECS
+cp /tmp/haproxy.cfg ../SOURCES/haproxy.cfg
 sed -i "s/Patch[0-9].*//" haproxy.spec
 sed -i "s/Version:        1.5.18/Version:        ${HAPROXY_VERSION}/" haproxy.spec
 sed -i "s/download\/1\.5/download\/1\.6/" haproxy.spec
